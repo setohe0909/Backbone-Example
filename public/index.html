@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comics!</title>
+	<link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16">
+	<!--Template Style -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/register.css">
+
+	<!-- Framework UI -->
+	<link rel="stylesheet" href="css/vendor/kickstart.css" />
+	<link rel="stylesheet" href="css/vendor/kickstart-slideshow.css"> 
+	<link rel="stylesheet" href="css/vendor/kickstart-menus.css">
+	<link rel="stylesheet" href="css/vendor/csshake.min.css">
+</head>
+<body>
+
+<header id="header" class="callout callout-top clearfix">
+	
+</header>
+
+<section class="grid">
+	<article id="init"></article>
+	<article id="app" class="tab-content clearfix col_12" style="display: block;">
+		<article class="content-comics  col_8">
+			<nav>
+				<!-- Menu Horizontal -->
+				<ul class="menu">
+					<li><a href="#home">Home</a></li>
+					<li><a href="">Comics</a></li>
+					<li><a href="">Characters</a></li>
+					<li><a href="">News</a></li>
+					<li><a href="">Gener</a></li>
+				</ul>
+			</nav>
+			<div id="content-comics" class="col_10">
+				
+			</div>
+		</article>
+		<aside id="sidebar" class="col_4">
+		</aside>
+	</article>
+</section>
+
+<footer id="footer" class="callout clearfix">
+	
+</footer>
+
+<!-- Template register -->
+<script type="text/template" id="template_regis">
+	<section class="testbox">
+	  <h1 style="text-align: center;">Registration</h1>
+	  <div class="form-register">
+		  <hr>
+		  <label id="icon" for="fullname_input"></label>
+		  <input type="text" name="fullname_input" id="fullname" placeholder="Full Name" required/>
+
+		  <label id="icon" for="email_input"></label>
+		  <input type="text" name="email_input" id="email" 
+		  placeholder="Email" required/>
+
+		  <label id="icon" for="username_input"></label>
+		  <input type="text" name="username_input" id="username" placeholder="Username" required/>
+
+		  <label id="icon" for="pass_input"></label>
+		  <input type="password" name="pass_input" id="pass" placeholder="Password" required/>
+
+		   <a  id="Register" class="button-register">Register</a>
+		   <a  id="Cancel" class="button-register">Cancel</a>
+
+	       <div class="error-field"></div>
+	  </div>
+	</section>		
+</script>
+
+<!-- Template Login --> 
+<script type="text/template" id="template_login">
+	<section class="container" id="login-form">
+		<article id="content">
+			<div class="form">
+				<h1>Login</h1>
+				<div>
+					<input type="text" placeholder="Username" required=""
+					 id="username" />
+				</div>
+				<div>
+					<input type="password" placeholder="Password" required="" id="password" />
+				</div>
+				<div>
+					<input type="submit" type="submit" class="button-register" id="btn-click" value="Log in" />
+					<a style="cursor: pointer;" class="button-register" id="register">Register</a>
+				</div>
+			</div>
+		</article>
+	</section>
+</script>
+
+<!-- Template loan -->
+<script type="text/template" id="template_loan">
+<h4>Loan comics</h4>
+	<p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
+	</p>
+	<table id="loan-details" cellspacing="0" cellpadding="0" class="striped tight sortable">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Creator</th>
+				<th>Edition</th>
+				<th>Avialable</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% _.each(jsonComics, function(comic){ %> 
+				<% if (comic.available) { %>
+					<tr>	
+						<td> <%= comic.title %> </td>
+						<td> <%= comic.creator %> </td>
+						<td> <%= comic.edition %> </td>
+						<td > available </td>
+					</tr>						
+				<% }else{ %>
+					<tr style="background: #ED3737;color: #fff;">
+						<td> <%= comic.title %> </td>
+						<td> <%= comic.creator %> </td>
+						<td> <%= comic.edition %> </td>		
+						<td> not available </td>
+					</tr>
+				<% } %>
+			<% }) %>
+		</tbody>
+	</table>
+</script>
+
+<!-- Template Home -->
+<script type="text/template" id="template_home">
+	<h4>Hello, and welcome to COMICS!</h4>
+	<p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
+	</p>
+
+	<div class="wrapper-galery"> 
+	  <div> 
+	    <img src="img/comics/Simpsons_Comics_12.png" class="img-galery">
+	    <img src="img/comics/spawn.jpg" class="img-galery">
+	    <img src="img/comics/superman_vs.jpg" class="img-galery">
+	  </div>
+	</div>
+
+  <p style="margin-top:10px">
+   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+  </p> 
+  <p style="margin-top:10px">
+   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+  </p>
+  <div class="wrapper-galery"> 
+	  <div> 
+	    <img src="img/comics/thor.jpg" class="img-galery">
+	    <img src="img/comics/iron_man.jpg" class="img-galery">
+	    <img src="img/comics/daredevil.jpg" class="img-galery">
+	  </div>
+	</div>
+</script>
+
+<!-- Template Header -->
+<script type="text/template" id="template_header">
+	<a href="#logout" id="logout" class="hvr-grow-rotate">Log out</a>
+	<a href="#account" style="left: 1045px;" id="Account" class="hvr-grow-rotate">Account</a>
+	<div class="header">
+	<h3>Newest Comics!</h3>
+		<img src="img/comics/Simpsons_Comics_12.png" alt="superman" class="comics shake shake-slow" style="width: 200px;
+">
+		<img src="img/comics/simpsons.jpg" alt="simpsons" class="comics shake shake-slow" style="width: 200px;
+">
+		<img src="img/comics/thor.jpg" alt="Thor" class="comics shake shake-slow" style="width: 200px;
+">
+		<img src="img/comics/Simpsons1.png" alt="Simpsons" class="comics shake shake-slow" style="width: 200px;
+">
+  </div>
+</script>
+
+<!-- Template Footer -->
+<script type="text/template" id="template_footer">
+	<div style="width: 20%;float:left;">
+		<h4> Pages </h4>
+		<ul class="sitemap">
+			<li><a href="#home"> Home </a></li>
+			<li><a href="#comics"> Comics </a></li>
+	        <li><a href="#characters"> Characters </a></li>
+	        <li><a href="#news"> News </a></li>
+	        <li><a href="#gener"> Genre </a></li>
+		</ul>
+	</div>
+	<div style="width: 20%;float:left;">
+		<h4> Comics </h4>
+		<ul class="sitemap">
+			<li><a href="#searches"> Top Searches </a></li>
+			<li><a href="#qualifications"> Qualifications </a></li>
+			<li><a href="#loan"> Loan Comics </a></li>
+	        <li style="height: 51px;"><a href="#recommended"> Most Recommended </a></li>
+		</ul>
+	</div>
+	 <div>
+		<div class="bubble">
+            <div class="featured_post">
+                <h2 class="post_title"><a href="#">New post</a></h2>
+                <p class="post_brief">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="post_info">
+                    <span class="author">Posted by <a href="#">Admin</a></span>,
+                    <span class="date">Apr 14</span>
+                </div>
+                <div class="post_comments">
+                    <div class="number"><a href="#">29</a></div>
+                    <div class="comments"><a href="#">Comments</a></div>
+                </div>
+            </div>
+        </div>
+    	<img src="https://s-media-cache-ak0.pinimg.com/originals/5f/cd/5f/5fcd5fcbc6c69af7e5f306e03036dd91.jpg" style="position: relative;top: -111px ;width: 280px;margin-top: -620px;margin-left: 861px;left: -70px;" alt="Character">
+    </div>
+</script>
+
+<!-- Template sidebar -->
+<script type="text/template" id="template_sidebar">
+	<div style="margin-left:10px; padding: 20px;">
+		<input type="text" placeholder="Search">
+		<button class="btn-go shake shake-slow">Go!</button>
+	</div>
+	<div class="vertical-menu">
+        <!-- Menu Vertical Left -->
+        <h3 style="text-align: center">Comics</h3>
+		<ul class="menu vertical">
+			<li><a href="#searches">Top Searches</a></li>
+			<li><a href="#qualifications">Qualifications</a></li>
+			<li><a href="#loan">Loan Comics</a></li>
+			<li><a href="#recommended">Most Recommended</a></li>
+		</ul>
+	</div>
+</script>
+
+<!-- Template Searches -->
+<script type="text/template" id="template_search">
+    <h4>Top Searches</h4>
+  	<p>
+  	Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+  	</p>
+	<div>
+		<% _.each(jsonComics, function(comic){ %> 
+			<% if (comic.categorie == "top") { %>	
+				<hr class="alt2">
+				<div style="margin-top: 20px;">
+					<cite class="cite-color">Title:</cite> <strong class="strong-comics"><%= comic.title %></strong><br>
+				    <cite class="cite-color">Creator:</cite> <strong class="strong-comics"><%= comic.creator %></strong><br>
+				    <cite class="cite-color">Edition:</cite> <strong class="strong-comics"><%= comic.edition %></strong><br>
+				    <cite class="cite-color">Gener:</cite> <strong><%= comic.genre %></strong><br>
+				    <cite class="cite-color">Searched:</cite> <strong><%= comic.searched %></strong><br><br>
+				    <img class="align-left" src="<%= comic.cover %>" width="100" height="100" />
+				    <p><%= comic.detail %></p><br>
+				</div>
+				<hr class="alt2" style="color: #9C0000">
+			<% } %>
+		<% }) %>		
+	</div>
+</script>
+
+<!-- Template qualifications -->
+<script type="text/template" id="template_qualifications">
+<h4>Qualification</h4>
+  	<p>
+  	Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+  	</p>
+	<div>
+		<% _.each(jsonComics, function(comic){ %> 
+			<% if (comic.categorie == "qualification") { %>				
+				<hr class="alt2">
+				<div style="margin-top: 20px;">
+					<cite class="cite-color">Title:</cite> <strong class="strong-comics"><%= comic.title %></strong><br>
+				    <cite class="cite-color">Creator:</cite> <strong class="strong-comics"><%= comic.creator %></strong><br>
+				    <cite class="cite-color">Edition:</cite> <strong class="strong-comics"><%= comic.edition %></strong><br>
+				    <cite class="cite-color">Gener:</cite> <strong><%= comic.genre %></strong><br>
+				    <cite class="cite-color">Qualification:</cite> <strong><%= comic.qualification %></strong><br><br>
+				    <img class="align-left" src="<%= comic.cover %>" width="100" height="100" />
+				    <p><%= comic.detail %></p><br>
+				</div>
+				<hr class="alt2" style="color: #9C0000">
+			<% } %>
+		<% }) %>		
+	</div>
+</script>
+
+<!-- Template recommended -->
+<script type="text/template" id="template_recommended">
+<h4>Most Recommended</h4>
+  	<p>
+  	Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+  	</p>
+	<div>
+		<% _.each(jsonComics, function(comic){ %> 
+			<% if (comic.categorie == "most") { %>
+				<hr class="alt2">
+				<div style="margin-top: 20px;">
+					<cite class="cite-color">Title:</cite> <strong class="strong-comics"><%= comic.title %></strong><br>
+				    <cite class="cite-color">Creator:</cite> <strong class="strong-comics"><%= comic.creator %></strong><br>
+				    <cite class="cite-color">Edition:</cite> <strong class="strong-comics"><%= comic.edition %></strong><br>
+				    <cite class="cite-color">Gener:</cite> <strong><%= comic.genre %></strong><br>
+				    <cite class="cite-color">Recommended:</cite> <strong><%= comic.recommended %> times</strong><br><br>
+				    <img class="align-left" src="<%= comic.cover %>" width="100" height="100" />
+				    <p><%= comic.detail %></p><br>
+				</div>
+				<hr class="alt2" style="color: #9C0000">
+			<% } %>
+		<% }) %>		
+	</div>
+</script>
+
+<!-- Template account -->
+<script type="text/template" id="template_account">
+<h4>Account</h4>
+<p>
+ <img class="align-left" src="https://carmen.osu.edu/carmen-responsive-assets/img/login-button.png" width="100" height="100" />
+<cite class="cite-color">Name:</cite>
+<strong class="strong-comics">Name</strong><br><br>
+<cite class="cite-color">Email:</cite>
+<strong class="strong-comics">Email</strong><br><br><br><br>
+
+<p>
+<h6>About me: </h6>
+  	Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+ </p>
+ </p>
+
+</script>
+
+<!-- libraries -->
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/vendor/kickstart.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/backbone1-min.js"></script>
+<script src="js/vendor/backbone.localStorage.js"></script>
+
+<!-- References -->
+<script src="js/references.js"></script>
+
+<!-- models -->
+<script src="js/models/user.js"></script>
+<script src="js/models/session.js"></script>
+<script src="js/models/top_comic.js"></script>
+
+<!-- collections -->
+<script src="js/collections/user_collection.js"></script>
+<script src="js/collections/session_collection.js"></script>
+<script src="js/collections/search_collection.js"></script>
+
+<!-- views -->
+<script src="js/views/login.js"></script>
+<script src="js/views/home.js"></script>
+<script src="js/views/header.js"></script>
+<script src="js/views/sidebar.js"></script>
+<script src="js/views/footer.js"></script>
+<script src="js/views/searche.js"></script>
+<script src="js/views/qualifications.js"></script>
+<script src="js/views/recommended.js"></script>
+<script src="js/views/loan.js"></script>
+<script src="js/views/account.js"></script>
+
+<!-- routers -->
+<script src="js/routers/routers.js"></script>
+
+</body>
+</html>
