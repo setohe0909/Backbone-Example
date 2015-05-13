@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chars>
+	<title>Modelos</title>
+
+	<link rel="stylesheet" href="text/css" media="screen" href="css/estilos.css">
+
+	<script type="text/javascript" src="js/lib/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/lib/underscore-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/lib/backbone-1.0.0.min.js"></script>
+
+	<script type="text/javascript" src="js/views/PanelView.js"></script>
+	<script type="text/javascript" src="js/views/BotonView.js"></script>
+	<script type="text/javascript" src="js/model/panel.js"></script>
+	<script type="text/javascript" src="js/lib/ejemplo.js"></script>
+
+	<script type="text/template" id="panel_template">
+		<div id="panel" data-id=<%= id %>>
+			<div id="panel_rotulo"><%= rotulo %></div>
+			<div id="panel_texto"><%= txt %></div>
+		</div>
+	</script>
+
+	<script type="text/template" id="boton_template">
+		<li data-id=<%= id %>>
+			<%= rotulo %>
+		</li>
+	</script>
+</head>
+<body>
+	<div id="mini_form">
+		<input type="text" id="rot_init" />
+		<button id="create_button"> Crear modelos</button>
+		<br><br>
+
+		<button id="reset_button">Borrar colección</button>	
+		<button id="delete_button">Borrar modelo</button>
+		<input type="tex" id="rot_del" />	 
+		<button id="delete_button_ID">Borrar modelo por ID</button>
+		<br><br>
+
+		<input type="text" id="rot_set"/>
+		<button id="set_button">Aplicar valor</button>
+		<button id="sort_button">Ordenar por rótulo</button>
+		<input type="text" id="rot_filter" />
+		<button id="filter_button">Filter</button>
+
+	</div>
+
+	<div id="dos_cols">
+		<div id="listado">
+			
+		</div>
+		<div id="contenedor"> </div>
+	</div>
+
+	<div id="consola">
+		
+	</div>
+</body>
+</html>
